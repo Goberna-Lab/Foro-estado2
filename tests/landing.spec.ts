@@ -75,12 +75,31 @@ test('el acordeón abre un punto a la vez', async ({ page }) => {
 })
 
 test('todas las imágenes cargan', async ({ page }) => {
-  const imagenes = page.locator('img')
-  const total = await imagenes.count()
-  for (let i = 0; i < total; i++) {
-    await imagenes.nth(i).scrollIntoViewIfNeeded()
-    await expect
-      .poll(() => imagenes.nth(i).evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
-      .toBe(true)
-  }
+  // Recorre la página (el slider cambia de foto solo, así que se revisa todo junto al final)
+  await page.evaluate(async () => {
+    for (let y = 0; y < document.body.scrollHeight; y += 500) {
+      window.scrollTo({ top: y, behavior: 'instant' })
+      await new Promise((r) => setTimeout(r, 50))
+    }
+  })
+  await expect
+    .poll(() => page.evaluate(() => [...document.images].filter((img) => !img.complete || !img.naturalWidth).length))
+    .toBe(0)
+})
+
+test('el botón de WhatsApp queda en la base y no tapa el footer', async ({ page }) => {
+  const boton = page.locator('.whatsapp')
+  const viewport = page.viewportSize()!
+
+  const arriba = (await boton.boundingBox())!
+  expect(viewport.height - (arriba.y + arriba.height)).toBeLessThanOrEqual(40)
+
+  await page.evaluate(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' }))
+  const footer = (await page.locator('footer').boundingBox())!
+  await expect
+    .poll(async () => {
+      const b = (await boton.boundingBox())!
+      return b.y + b.height <= footer.y
+    })
+    .toBe(true)
 })
