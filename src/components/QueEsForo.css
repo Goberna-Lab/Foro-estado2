@@ -6,6 +6,7 @@
   color: var(--light);
 }
 
+/* Fondo con parallax (ver useParallax) */
 .que-es__bg {
   position: absolute;
   top: 0;

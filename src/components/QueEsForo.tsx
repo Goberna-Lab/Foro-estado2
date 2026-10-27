@@ -3,6 +3,7 @@ import globe from '../assets/icons/icon-globe.svg'
 import person from '../assets/icons/icon-person.svg'
 import handshake from '../assets/icons/icon-handshake.svg'
 import quote from '../assets/icons/quote-open.svg'
+import { useParallax } from '../hooks/useParallax'
 import Eyebrow from './Eyebrow'
 import './QueEsForo.css'
 
@@ -15,9 +16,11 @@ const EJES = [
 ]
 
 export default function QueEsForo() {
+  const fondo = useParallax<HTMLImageElement>()
+
   return (
     <section className="que-es">
-      <img className="que-es__bg" src={escenario} alt="" />
+      <img className="que-es__bg" ref={fondo} src={escenario} alt="" />
 
       <div className="container">
         <Eyebrow variant="short" className="que-es__eyebrow">
