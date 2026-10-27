@@ -1,0 +1,264 @@
+.inversion {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.inversion__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 818px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.inversion__photo img {
+  width: 883px;
+  height: 972px;
+  margin-top: -4px;
+}
+
+/* Brillo sutil sobre la medalla de la foto: un destello diagonal que la
+   cruza cada pocos segundos y un resplandor que respira. */
+.inversion__shine {
+  position: absolute;
+  top: 572px;
+  left: 328px;
+  width: 210px;
+  height: 204px;
+  overflow: hidden;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.inversion__shine::before {
+  content: '';
+  position: absolute;
+  inset: -20% auto -20% 0;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 250, 230, 0.85) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  mix-blend-mode: overlay;
+  transform: translateX(-120%) skewX(-20deg);
+  animation: medalla-destello 5s ease-in-out 1s infinite;
+}
+
+.inversion__shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 236, 190, 0.45), transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0.25;
+  animation: medalla-resplandor 5s ease-in-out infinite;
+}
+
+@keyframes medalla-destello {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  30%,
+  100% {
+    transform: translateX(280%) skewX(-20deg);
+  }
+}
+
+@keyframes medalla-resplandor {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inversion__shine::before,
+  .inversion__shine::after {
+    animation: none;
+  }
+}
+
+.inversion__map {
+  position: absolute;
+  top: -2px;
+  left: 817px;
+  width: 1103px;
+  height: 900px;
+  overflow: hidden;
+}
+
+.inversion__map img {
+  width: 2033px;
+  height: 900px;
+  margin-left: -649px;
+}
+
+.inversion__title {
+  position: absolute;
+  top: 150px;
+  left: 0;
+}
+
+.inversion__term {
+  position: absolute;
+  top: 434px;
+  left: 0;
+  font: 400 18px/32px var(--manrope);
+  text-transform: uppercase;
+  color: #f6f7f9;
+}
+
+.inversion__panel {
+  position: absolute;
+  top: 136px;
+  left: 850px;
+  width: 636px;
+  color: var(--navy);
+}
+
+.inversion__price {
+  position: relative;
+  height: 263px;
+  border: 1px solid var(--orange);
+  border-radius: 20px;
+  background: var(--light);
+  text-align: center;
+}
+
+.inversion__badge {
+  position: absolute;
+  top: -34px;
+  left: 96px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 444px;
+  height: 68px;
+  padding-left: 37px;
+  background: var(--grad-orange);
+  font: 700 32px/1 var(--sora);
+  color: #fff;
+}
+
+.inversion__date {
+  padding-top: 50px;
+  font: 800 70px/83px var(--sora);
+  letter-spacing: -0.015em;
+}
+
+.inversion__date::after {
+  content: '';
+  display: block;
+  width: 568px;
+  height: 1px;
+  margin: 12px 0 0 34px;
+  background: var(--gray);
+}
+
+.inversion__amount {
+  margin-top: 10px;
+  font: 800 62px/83px var(--sora);
+  letter-spacing: -0.015em;
+  color: var(--orange);
+}
+
+.inversion__row {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.inversion__row--card {
+  height: 121px;
+  margin-top: 22px;
+  border: 1px solid #aab0b7;
+  border-radius: 18px;
+  background: var(--light);
+}
+
+.inversion__row:not(.inversion__row--card) {
+  margin-top: 25px;
+  padding-top: 27px;
+  border-top: 1px solid var(--gray);
+}
+
+.inversion__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 73px;
+  height: 73px;
+  border-radius: 50%;
+  background: #fef4ed;
+}
+
+.inversion__icon--gray {
+  background: #e1e6ee;
+}
+
+.inversion__icon img {
+  max-height: 42px;
+}
+
+.inversion__row p {
+  position: relative;
+  margin-left: 57px;
+}
+
+/* Separador vertical entre el ícono y el texto */
+.inversion__row p::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -26px;
+  width: 1px;
+  height: 70px;
+  translate: 0 -50%;
+  background: #707070;
+}
+
+.inversion__from {
+  display: block;
+  font: 500 23px/28px var(--sora);
+  letter-spacing: -0.01em;
+}
+
+.inversion__later {
+  display: block;
+  margin-top: 4px;
+  font: 800 43px/48px var(--sora);
+  letter-spacing: -0.015em;
+  opacity: 0.6;
+}
+
+.inversion__note {
+  width: 497px;
+  font: 500 20px/29px var(--sora);
+  color: var(--navy-2);
+}
+
+.inversion__note strong {
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.inversion__cta {
+  display: grid;
+  place-items: center;
+  width: 626px;
+  height: 72px;
+  margin: 61px 0 0 1px;
+  border-radius: 10px;
+  background: var(--grad-orange);
+  font: 400 19px/32px var(--inter);
+  text-transform: uppercase;
+  color: #fff;
+  transition: background 0.25s;
+}
+
+.inversion__cta:hover {
+  background: var(--gold);
+}

@@ -1,0 +1,81 @@
+.pais {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+  background: var(--navy-2);
+}
+
+.pais > .strip {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+}
+
+.pais__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.pais__bg img {
+  width: 1920px;
+  height: 1280px;
+  margin-top: -380px;
+}
+
+/* Velo navy que oscurece el lado izquierdo de la foto */
+.pais__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  background: linear-gradient(
+    90deg,
+    var(--navy-2) 38.6%,
+    rgba(5, 18, 51, 0.66) 60.6%,
+    rgba(5, 18, 51, 0) 78.6%
+  );
+}
+
+.pais__eyebrow {
+  position: absolute;
+  top: 152px;
+  left: 0;
+}
+
+.pais__title {
+  position: absolute;
+  top: 269px;
+  left: 2px;
+}
+
+.pais__cta {
+  position: absolute;
+  top: 567px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 306px;
+  height: 64px;
+  padding-left: 24px;
+  border: 1px solid var(--light);
+  font: 400 18px/21px var(--inter);
+  color: var(--light);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.pais__cta span {
+  width: 14px;
+  height: 12px;
+  margin-left: 15px;
+  background: currentColor;
+  mask: no-repeat center / contain;
+}
+
+.pais__cta:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+}

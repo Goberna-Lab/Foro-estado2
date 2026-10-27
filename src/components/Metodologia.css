@@ -1,0 +1,203 @@
+.metodo {
+  background: #fff;
+}
+
+.metodo__intro {
+  height: 452px;
+  background: var(--light);
+}
+
+.metodo__intro .container {
+  height: 100%;
+}
+
+.metodo__eyebrow {
+  position: absolute;
+  top: 114px;
+  left: 0;
+  color: #0c1529;
+}
+
+.metodo__title {
+  position: absolute;
+  top: 219px;
+  left: 0;
+}
+
+.metodo__text {
+  position: absolute;
+  top: 236px;
+  left: 849px;
+  width: 671px;
+  font: 400 18px/28px var(--manrope);
+  color: var(--navy-2);
+}
+
+.metodo__text strong {
+  font-weight: 700;
+}
+
+.metodo__slider {
+  height: 804px;
+}
+
+.metodo__photo {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 760px;
+  height: 486px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--navy);
+}
+
+.metodo__photo img {
+  width: 771px;
+  height: 579px;
+  margin-top: -80px;
+  animation: metodo-fade 0.6s ease both;
+}
+
+.metodo__detail {
+  position: absolute;
+  top: 78px;
+  left: 849px;
+  width: 520px;
+  color: var(--navy-2);
+  animation: metodo-fade 0.6s ease both;
+}
+
+.metodo__number {
+  font: 700 180px/229px var(--sora);
+  letter-spacing: -0.035em;
+  color: var(--orange);
+}
+
+.metodo__phase {
+  margin-top: -4px;
+  font: 700 56px/84px var(--sora);
+  letter-spacing: -0.015em;
+}
+
+.metodo__question {
+  width: 511px;
+  margin-top: 11px;
+  font: 700 24px/31px var(--sora);
+}
+
+.metodo__description {
+  width: 508px;
+  margin-top: 32px;
+  font: 400 20px/32px var(--manrope);
+  letter-spacing: 0.01em;
+}
+
+.metodo__arrows {
+  position: absolute;
+  top: 410px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.metodo__arrows button {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy-2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.metodo__arrows button:last-child,
+.metodo__arrows button:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.metodo__arrows button:last-child:hover {
+  filter: brightness(1.08);
+}
+
+.metodo__arrows svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.metodo__tabs {
+  position: absolute;
+  top: 627px;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 327px);
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metodo__tabs button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 97px;
+  text-align: left;
+  font: 400 24px/32px var(--manrope);
+  color: var(--navy-2);
+  opacity: 0.5;
+  border-bottom: 1px solid var(--gray);
+  transition: opacity 0.2s;
+}
+
+.metodo__tabs button:hover {
+  opacity: 0.8;
+}
+
+.metodo__tabs button.is-active {
+  opacity: 1;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.metodo__tabs button.is-active span {
+  font-weight: 400;
+  color: var(--orange);
+}
+
+.metodo__progress {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--orange);
+  animation-name: metodo-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes metodo-progress {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes metodo-fade {
+  from {
+    opacity: 0;
+  }
+}

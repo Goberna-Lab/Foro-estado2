@@ -1,0 +1,16 @@
+.whatsapp {
+  position: fixed;
+  right: 200px;
+  bottom: 162px;
+  z-index: 40;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  /* rellena el hueco transparente del ícono */
+  background: radial-gradient(circle, #fff 24px, transparent 25px);
+  transition: transform 0.2s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.06);
+}

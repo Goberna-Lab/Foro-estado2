@@ -1,0 +1,126 @@
+.escalable {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+  background: var(--navy-3);
+  color: var(--light);
+}
+
+.escalable__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  mix-blend-mode: color-dodge;
+}
+
+.escalable__bg img {
+  width: 1920px;
+  height: 1398px;
+  margin-top: -180px;
+}
+
+.escalable__eyebrow {
+  position: absolute;
+  top: 111px;
+  left: 0;
+}
+
+.escalable__title {
+  position: absolute;
+  top: 234px;
+  left: 0;
+}
+
+.escalable__text {
+  position: absolute;
+  top: 499px;
+  left: 0;
+  width: 570px;
+  font: 400 var(--fs-body)/28px var(--manrope);
+}
+
+.escalable__text strong {
+  font-weight: 700;
+}
+
+.escalable__list {
+  position: absolute;
+  top: 203px;
+  left: 726px;
+  width: 794px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.escalable__list li + li {
+  margin-top: 16px;
+}
+
+.escalable__list button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 80px;
+  padding-right: 24px;
+  text-align: left;
+  color: var(--light);
+  background: rgba(2, 16, 42, 0.85);
+  border: 2px solid #1c3963;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.escalable__list button:hover {
+  border-color: #2b5694;
+}
+
+.escalable__list .is-open button {
+  min-height: 110px;
+  color: var(--navy-2);
+  background: var(--light);
+  border-color: var(--light);
+  border-radius: 0;
+}
+
+.escalable__num {
+  flex: 0 0 76px;
+  padding-left: 22px;
+  font: 500 28px/1 var(--montserrat);
+  letter-spacing: -0.03em;
+}
+
+.is-open .escalable__num {
+  padding-left: 19px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.escalable__body {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 0 3px 23px;
+  border-left: 1px solid #1c3f6c;
+}
+
+.escalable__item-title {
+  font: 700 22px/34px var(--sora);
+}
+
+.escalable__item-text {
+  font: 400 var(--fs-body)/28px var(--manrope);
+}
+
+.escalable__item-text strong {
+  font-weight: 700;
+}
+
+.escalable__plus {
+  margin-left: auto;
+  font: 500 37px/1 var(--montserrat);
+  color: #adb1b4;
+}

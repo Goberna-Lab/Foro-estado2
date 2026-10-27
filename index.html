@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modelo de licenciamiento internacional de Grupo Goberna para llevar el Foro de Estado a tu país."
+    />
+    <title>Foro de Estado | Licencia Internacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Manrope:wght@400;500;700;800&family=Montserrat:wght@500;700&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // El diseño se maqueta a 1920px y se escala al ancho real (1366 o 1920).
+      // Se ejecuta antes del primer pintado para evitar un salto de escala.
+      ;(function () {
+        var root = document.documentElement
+        function ajustar() {
+          root.style.setProperty('--zoom', String(root.clientWidth / 1920))
+        }
+        ajustar()
+        new ResizeObserver(ajustar).observe(root)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

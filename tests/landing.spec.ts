@@ -1,0 +1,86 @@
+import { expect, test, type Page } from '@playwright/test'
+
+const DISENO = 1920
+
+async function abrir(page: Page) {
+  await page.goto('/')
+  await page.evaluate(() => document.fonts.ready)
+}
+
+test.beforeEach(async ({ page }) => {
+  await abrir(page)
+})
+
+test('escala el diseño al ancho de la ventana sin scroll horizontal', async ({ page }) => {
+  const { zoom, ancho, scrollAncho } = await page.evaluate(() => ({
+    zoom: Number(getComputedStyle(document.documentElement).getPropertyValue('--zoom')),
+    ancho: document.documentElement.clientWidth,
+    scrollAncho: document.documentElement.scrollWidth,
+  }))
+
+  expect(zoom).toBeCloseTo(ancho / DISENO, 3)
+  expect(scrollAncho).toBeLessThanOrEqual(ancho)
+})
+
+test('el hero muestra el título y el subtítulo dentro de la primera pantalla', async ({ page }) => {
+  const viewport = page.viewportSize()!
+  for (const selector of ['.hero__title', '.hero__subtitle', '.hero__note']) {
+    const box = (await page.locator(selector).boundingBox())!
+    expect(box.y + box.height, selector).toBeLessThanOrEqual(viewport.height)
+  }
+})
+
+test('el header queda fijo y los enlaces llevan a cada sección', async ({ page }) => {
+  const header = page.locator('.header')
+  const nav = page.getByRole('navigation', { name: 'Principal' })
+
+  for (const [link, id] of [
+    ['Visión', 'vision'],
+    ['Modelo', 'modelo'],
+    ['Licencia', 'licencia'],
+    ['Inversión', 'inversion'],
+  ]) {
+    await nav.getByRole('link', { name: link }).click()
+    await expect(page).toHaveURL(new RegExp(`#${id}$`))
+
+    const headerBox = (await header.boundingBox())!
+    await expect
+      .poll(async () => Math.round((await page.locator(`#${id}`).boundingBox())!.y))
+      .toBe(Math.round(headerBox.height))
+    expect(headerBox.y).toBe(0)
+  }
+})
+
+test('el slider de fases cambia con las flechas y las pestañas', async ({ page }) => {
+  const fase = page.locator('.metodo__phase')
+  await page.locator('#modelo').scrollIntoViewIfNeeded()
+
+  await expect(fase).toHaveText('Diagnóstico')
+  await page.getByRole('button', { name: 'Fase siguiente' }).click()
+  await expect(fase).toHaveText('Convocatoria')
+  await page.getByRole('button', { name: 'Fase anterior' }).click()
+  await page.getByRole('button', { name: 'Fase anterior' }).click()
+  await expect(fase).toHaveText('Compromisos')
+  await page.getByRole('button', { name: /Deliberación/ }).click()
+  await expect(fase).toHaveText('Deliberación')
+})
+
+test('el acordeón abre un punto a la vez', async ({ page }) => {
+  const items = page.locator('.escalable__list button')
+  await expect(items.nth(0)).toHaveAttribute('aria-expanded', 'true')
+
+  await items.nth(2).click()
+  await expect(items.nth(2)).toHaveAttribute('aria-expanded', 'true')
+  await expect(items.nth(0)).toHaveAttribute('aria-expanded', 'false')
+})
+
+test('todas las imágenes cargan', async ({ page }) => {
+  const imagenes = page.locator('img')
+  const total = await imagenes.count()
+  for (let i = 0; i < total; i++) {
+    await imagenes.nth(i).scrollIntoViewIfNeeded()
+    await expect
+      .poll(() => imagenes.nth(i).evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+      .toBe(true)
+  }
+})
