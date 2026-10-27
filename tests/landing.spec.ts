@@ -78,6 +78,33 @@ test('el acordeón abre un punto a la vez', async ({ page }) => {
   await expect(items.nth(0)).toHaveAttribute('aria-expanded', 'false')
 })
 
+test('la foto de "¿Qué es?" hace parallax sin dejar ver el fondo por arriba', async ({ page }) => {
+  const posiciones = () =>
+    page.evaluate(() => ({
+      seccion: document.querySelector('.que-es')!.getBoundingClientRect().top,
+      foto: document.querySelector('.que-es__bg')!.getBoundingClientRect().top,
+    }))
+  // El scroll programa la actualización para el siguiente frame: se esperan dos
+  const irA = (dy: number) =>
+    page.evaluate(async (dy) => {
+      const top = document.querySelector('.que-es')!.getBoundingClientRect().top + scrollY
+      window.scrollTo({ top: top - innerHeight + dy, behavior: 'instant' })
+      for (let i = 0; i < 2; i++) await new Promise(requestAnimationFrame)
+    }, dy)
+
+  await irA(100)
+  const antes = await posiciones()
+
+  await irA(400)
+  const despues = await posiciones()
+
+  // La foto debe recorrer bastante menos que el contenido
+  const scroll = antes.seccion - despues.seccion
+  expect(antes.foto - despues.foto).toBeLessThan(scroll * 0.7)
+  // Mientras se ve el borde superior de la sección, la foto no queda por debajo de él
+  expect(despues.foto).toBeLessThanOrEqual(despues.seccion + 0.5)
+})
+
 test('todas las imágenes cargan', async ({ page }) => {
   // Recorre la página (el slider cambia de foto solo, así que se revisa todo junto al final)
   await page.evaluate(async () => {

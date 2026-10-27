@@ -6,19 +6,27 @@
   color: var(--light);
 }
 
+/* Foto + degradado se mueven juntos con el parallax; como el degradado termina
+   en navy (igual que la sección) nunca se ve el borde de la foto. */
 .que-es__bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 1920px;
+  height: 1206px;
+  translate: 0 calc(var(--parallax-y, 0) * 1px / var(--zoom, 1));
+  will-change: translate;
+}
+
+.que-es__bg img {
+  width: 1920px;
   height: 1024px;
 }
 
 /* Degradado que funde la foto con el fondo navy */
-.que-es::before {
+.que-es__bg::after {
   content: '';
   position: absolute;
-  z-index: 1;
   top: 158px;
   left: 0;
   width: 100%;
