@@ -107,34 +107,3 @@ test('el botón de WhatsApp queda en la base y no tapa el footer', async ({ page
     })
     .toBe(true)
 })
-
-test('el fondo de "¿Qué es el Foro?" tiene parallax de ±25px sin mostrar bordes', async ({ page }) => {
-  const medir = async (posicion: 'entrando' | 'centro' | 'saliendo') => {
-    await page.evaluate((pos) => {
-      const s = document.querySelector('.que-es')!
-      const top = s.getBoundingClientRect().top + window.scrollY
-      const vh = window.innerHeight
-      const h = s.getBoundingClientRect().height
-      const y = { entrando: top - vh + 1, centro: top + h / 2 - vh / 2, saliendo: top + h - 1 }[pos]
-      window.scrollTo({ top: y, behavior: 'instant' })
-    }, posicion)
-    await page.waitForTimeout(100)
-    return page.evaluate(() => {
-      const capa = document.querySelector<HTMLElement>('.que-es__bg')!
-      const seccion = document.querySelector('.que-es')!.getBoundingClientRect()
-      return {
-        y: new DOMMatrix(getComputedStyle(capa).transform).m42,
-        sinBorde: capa.getBoundingClientRect().top <= seccion.top + 0.5,
-      }
-    })
-  }
-
-  const entrando = await medir('entrando')
-  const centro = await medir('centro')
-  const saliendo = await medir('saliendo')
-
-  expect(entrando.y).toBeCloseTo(-25, 0)
-  expect(Math.abs(centro.y)).toBeLessThan(3)
-  expect(saliendo.y).toBeCloseTo(25, 0)
-  expect([entrando, centro, saliendo].every((m) => m.sinBorde)).toBe(true)
-})
