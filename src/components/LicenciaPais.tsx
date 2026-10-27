@@ -9,7 +9,7 @@ export default function LicenciaPais() {
     <section className="pais">
       <div className="strip" />
       <div className="pais__bg" aria-hidden="true">
-        <img src={auditorio} alt="" />
+        <img className="px-bg" src={auditorio} alt="" />
       </div>
 
       <div className="container">

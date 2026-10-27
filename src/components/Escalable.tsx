@@ -23,7 +23,7 @@ export default function Escalable() {
   return (
     <section className="escalable">
       <div className="escalable__bg" aria-hidden="true">
-        <img src={redGlobal} alt="" />
+        <img className="px-bg" src={redGlobal} alt="" />
       </div>
 
       <div className="container">

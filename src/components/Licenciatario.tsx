@@ -22,7 +22,7 @@ export default function Licenciatario() {
   return (
     <section className="licenciatario" id="licencia">
       <div className="licenciatario__bg" aria-hidden="true">
-        <img src={capitolio} alt="" />
+        <img className="px-bg" src={capitolio} alt="" />
       </div>
 
       <div className="container">

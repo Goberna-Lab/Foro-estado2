@@ -18,7 +18,7 @@ const PILARES = [
 export default function MundoCambio() {
   return (
     <section className="mundo" id="vision">
-      <div className="mundo__map" aria-hidden="true">
+      <div className="mundo__map px-bg" aria-hidden="true">
         <img src={mapa} alt="" />
         <img src={mapa} alt="" />
       </div>

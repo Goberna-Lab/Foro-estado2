@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import MundoCambio from './components/MundoCambio'
@@ -11,12 +12,16 @@ import Licenciatario from './components/Licenciatario'
 import Inversion from './components/Inversion'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import { useParallax } from './hooks/useParallax'
 
 export default function App() {
+  const main = useRef<HTMLElement>(null)
+  useParallax(main)
+
   return (
     <>
       <Header />
-      <main>
+      <main ref={main}>
         <Hero />
         <MundoCambio />
         <PorQueAhora />

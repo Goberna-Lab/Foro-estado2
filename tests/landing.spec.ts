@@ -105,6 +105,48 @@ test('la foto de "¿Qué es?" hace parallax sin dejar ver el fondo por arriba', 
   expect(despues.foto).toBeLessThanOrEqual(despues.seccion + 0.5)
 })
 
+test('los fondos con .px-bg se mueven sin dejar ver sus bordes', async ({ page }) => {
+  const fondos = page.locator('.px-bg')
+  expect(await fondos.count()).toBeGreaterThan(0)
+
+  for (const fondo of await fondos.all()) {
+    const medir = () =>
+      fondo.evaluate((el) => {
+        // El recorte lo hace el primer ancestro con overflow hidden
+        let clip = el.parentElement!
+        while (getComputedStyle(clip).overflow !== 'hidden') clip = clip.parentElement!
+        const b = el.getBoundingClientRect()
+        const c = clip.getBoundingClientRect()
+        return { top: b.top - c.top, bottom: c.bottom - b.bottom, y: b.top }
+      })
+    const pasos = []
+    for (const avance of [0.1, 0.5, 0.9]) {
+      await fondo.evaluate(async (el, avance) => {
+        const s = el.closest('section')!.getBoundingClientRect()
+        window.scrollTo({ top: scrollY + s.top - innerHeight + (innerHeight + s.height) * avance, behavior: 'instant' })
+        for (let i = 0; i < 2; i++) await new Promise(requestAnimationFrame)
+      }, avance)
+      pasos.push(await medir())
+    }
+    const clase = await fondo.evaluate((el) => el.closest('section')!.className)
+    for (const p of pasos) {
+      expect(p.top, clase).toBeLessThanOrEqual(1)
+      expect(p.bottom, clase).toBeLessThanOrEqual(1)
+    }
+    // Relativo a su recorte, el fondo baja mientras la página sube
+    expect(pasos[2].top - pasos[0].top, clase).toBeGreaterThan(0)
+  }
+})
+
+test('con movimiento reducido los fondos quedan quietos', async ({ browser }) => {
+  const page = await browser.newPage({ reducedMotion: 'reduce' })
+  await abrir(page)
+  await page.evaluate(() => window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'instant' }))
+  const transforms = await page.$$eval('.px-bg, .px-lento', (els) => els.map((el) => getComputedStyle(el).transform))
+  expect(transforms.every((t) => t === 'none')).toBe(true)
+  await page.close()
+})
+
 test('todas las imágenes cargan', async ({ page }) => {
   // Recorre la página (el slider cambia de foto solo, así que se revisa todo junto al final)
   await page.evaluate(async () => {

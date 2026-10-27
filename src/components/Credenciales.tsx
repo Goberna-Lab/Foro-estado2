@@ -17,7 +17,7 @@ export default function Credenciales() {
   return (
     <section className="credenciales" id="trayectoria">
       <div className="credenciales__map" aria-hidden="true">
-        <img src={mapa} alt="" />
+        <img className="px-bg" src={mapa} alt="" />
       </div>
 
       <div className="container">

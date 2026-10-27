@@ -6,16 +6,14 @@
   color: var(--light);
 }
 
-/* Foto + degradado se mueven juntos con el parallax; como el degradado termina
-   en navy (igual que la sección) nunca se ve el borde de la foto. */
+/* Foto + degradado se mueven juntos con el parallax (.px-lento); como el
+   degradado termina en navy (igual que la sección) nunca se ve el borde. */
 .que-es__bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 1920px;
   height: 1206px;
-  translate: 0 calc(var(--parallax-y, 0) * 1px / var(--zoom, 1));
-  will-change: translate;
 }
 
 .que-es__bg img {
