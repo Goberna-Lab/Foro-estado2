@@ -51,13 +51,13 @@
 /* Columna izquierda en flujo: si el texto crece, empuja lo de abajo */
 .credenciales__info {
   position: absolute;
-  top: 486px;
+  top: 495px;
   left: 0;
   width: 398px;
 }
 
 .credenciales__title {
-  font: 800 56px/60px var(--sora);
+  font: 800 56px/56px var(--sora);
   text-transform: uppercase;
 }
 
@@ -67,12 +67,12 @@
 }
 
 .credenciales__text {
-  margin-top: 16px;
+  margin-top: 7px;
 }
 
 .credenciales__claim {
-  margin-top: 26px;
-  padding-top: 26px;
+  margin-top: 30px;
+  padding-top: 22px;
   border-top: 1px solid var(--gray);
   text-transform: uppercase;
 }

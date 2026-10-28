@@ -31,8 +31,8 @@ export default function Escalable() {
         <TitleStack
           className="escalable__title"
           lines={[
-            { text: '¿Qué hace', tone: 'band', width: 448, height: 72, size: 60, tracking: -0.009 },
-            { text: 'escalable al', tone: 'white', width: 507, height: 76, size: 60, tracking: -0.015 },
+            { text: '¿Qué hace', tone: 'band', width: 448, height: 72, size: 60, tracking: -0.009, shift: -5 },
+            { text: 'escalable al', tone: 'white', width: 507, height: 76, size: 60, tracking: -0.015, shift: -7 },
             { text: 'FORO DE ESTADO', tone: 'orange', width: 570, height: 80, size: 60, tracking: -0.009 },
           ]}
         />

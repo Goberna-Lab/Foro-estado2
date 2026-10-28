@@ -11,7 +11,7 @@ export default function PorQueAhora() {
   return (
     <section className="ahora">
       <div className="ahora__photo">
-        <img src={stand} alt="Stand de Goberna con el mapa de América Latina" />
+        <img className="px-foto" src={stand} alt="Stand de Goberna con el mapa de América Latina" />
       </div>
 
       <div className="container">

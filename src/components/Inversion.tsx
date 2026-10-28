@@ -11,8 +11,11 @@ export default function Inversion() {
   return (
     <section className="inversion" id="inversion">
       <div className="inversion__photo" aria-hidden="true">
-        <img src={medalla} alt="" />
-        <span className="inversion__shine" />
+        {/* Foto y destello en la misma capa para que el parallax no los separe */}
+        <div className="inversion__capa px-foto">
+          <img src={medalla} alt="" />
+          <span className="inversion__shine" />
+        </div>
       </div>
       <div className="inversion__map" aria-hidden="true">
         <img className="px-bg" src={mapa} alt="" />
@@ -23,9 +26,9 @@ export default function Inversion() {
           className="inversion__title"
           weight={700}
           lines={[
-            { text: 'Canon de', tone: 'white', width: 355, height: 84, size: 60, tracking: -0.015 },
+            { text: 'Canon de', tone: 'white', width: 355, height: 84, size: 60, tracking: -0.015, shift: 4 },
             { text: 'Licencia', tone: 'orange', width: 422, height: 89, size: 70, tracking: -0.009 },
-            { text: 'Internacional', tone: 'ink', width: 508, height: 89, size: 70, tracking: -0.009 },
+            { text: 'Internacional', tone: 'ink', width: 508, height: 89, size: 70, tracking: -0.009, shift: -6 },
           ]}
         />
         <p className="inversion__term">Vigencia: 1 año</p>

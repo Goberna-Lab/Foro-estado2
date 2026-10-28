@@ -83,7 +83,7 @@
 
 .ahora__stats h3 {
   height: 72px;
-  font: 600 22px/26px var(--sora);
+  font: 600 21px/25px var(--sora);
 }
 
 .ahora__stats h3::after {
@@ -111,8 +111,8 @@
 }
 
 .ahora__detail {
-  margin-top: 13px;
-  font: 400 var(--fs-body)/22px var(--sora);
+  margin-top: 7px;
+  font: 400 var(--fs-body)/1.25 var(--sora);
 }
 
 .ahora__strip {

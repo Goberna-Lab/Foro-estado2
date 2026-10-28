@@ -32,6 +32,19 @@ function arco(x: number, y: number) {
 
 const delay = (i: number) => ({ '--i': i }) as CSSProperties
 
+// En el XD "DE ESTADO" lleva un interletrado distinto en cada letra
+const DE_ESTADO: [string, number][] = [
+  ['D', -0.05],
+  ['E', -0.049],
+  [' ', -0.049],
+  ['E', -0.056],
+  ['S', -0.068],
+  ['T', -0.108],
+  ['A', -0.049],
+  ['D', -0.05],
+  ['O', 0],
+]
+
 export default function Hero() {
   // Paralaje suave del mapa siguiendo el mouse
   const mover = (e: MouseEvent<HTMLElement>) => {
@@ -73,8 +86,12 @@ export default function Hero() {
         </p>
         <h1 className="hero__title">
           <img className="hero__reveal" style={delay(1)} src={foro} alt="Foro" width={577} height={158} />
-          <span className="hero__reveal" style={delay(2)}>
-            de Estado
+          <span className="hero__reveal" style={delay(2)} aria-label="de Estado">
+            {DE_ESTADO.map(([letra, tracking], i) => (
+              <span key={i} aria-hidden="true" style={{ letterSpacing: `${tracking}em` }}>
+                {letra}
+              </span>
+            ))}
           </span>
         </h1>
         <p className="hero__subtitle hero__reveal" style={delay(3)}>

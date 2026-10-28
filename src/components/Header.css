@@ -12,9 +12,10 @@
   height: 100%;
 }
 
+/* Cada enlace arranca donde está en el XD (952, 1085, 1216 y 1353) */
 .header__nav {
-  display: flex;
-  gap: 70px;
+  display: grid;
+  grid-template-columns: 133px 131px 137px 85px;
   margin-left: auto;
 }
 
@@ -32,11 +33,11 @@
 .header__cta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 12px;
   width: 207px;
   height: 48px;
   margin-left: 75px;
+  padding-left: 27.5px;
   border-radius: 37px;
   background: var(--grad-orange);
   font: 500 var(--fs-cta)/19px var(--sora);

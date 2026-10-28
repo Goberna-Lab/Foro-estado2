@@ -14,17 +14,23 @@
   overflow: hidden;
 }
 
-.inversion__photo img {
+.inversion__capa {
+  position: relative;
   width: 883px;
   height: 972px;
   margin-top: -4px;
+}
+
+.inversion__photo img {
+  width: 883px;
+  height: 972px;
 }
 
 /* Brillo sutil sobre la medalla de la foto: un destello diagonal que la
    cruza cada pocos segundos y un resplandor que respira. */
 .inversion__shine {
   position: absolute;
-  top: 572px;
+  top: 576px;
   left: 328px;
   width: 210px;
   height: 204px;
@@ -147,7 +153,7 @@
 .inversion__date {
   padding-top: 50px;
   font: 800 70px/83px var(--sora);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.04em;
 }
 
 .inversion__date::after {
@@ -162,7 +168,7 @@
 .inversion__amount {
   margin-top: 10px;
   font: 800 62px/83px var(--sora);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.04em;
   color: var(--orange);
 }
 
@@ -223,20 +229,20 @@
 .inversion__from {
   display: block;
   font: 500 23px/28px var(--sora);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.04em;
 }
 
 .inversion__later {
   display: block;
   margin-top: 4px;
   font: 800 43px/48px var(--sora);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.06em;
   opacity: 0.6;
 }
 
 .inversion__note {
   width: 497px;
-  font: 500 20px/29px var(--sora);
+  font: 500 20px/27px var(--sora);
   color: var(--navy-2);
 }
 

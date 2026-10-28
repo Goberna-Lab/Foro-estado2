@@ -28,7 +28,9 @@
   position: absolute;
   top: 236px;
   left: 849px;
-  width: 671px;
+  /* 671px en el XD; el navegador dibuja Manrope ~1–2% más ancha (más en laptop,
+     por el zoom) y cortaba las líneas antes que el diseño */
+  width: 700px;
   font: 400 18px/28px var(--manrope);
   color: var(--navy-2);
 }
@@ -52,10 +54,13 @@
   background: var(--navy);
 }
 
+.metodo__capa {
+  margin-top: -80px;
+}
+
 .metodo__photo img {
   width: 771px;
   height: 579px;
-  margin-top: -80px;
   animation: metodo-fade 0.6s ease both;
 }
 
@@ -83,7 +88,7 @@
 .metodo__question {
   width: 511px;
   margin-top: 11px;
-  font: 700 24px/31px var(--sora);
+  font: 700 24px/28px var(--sora);
 }
 
 .metodo__description {

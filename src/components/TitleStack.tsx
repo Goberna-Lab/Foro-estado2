@@ -9,6 +9,8 @@ export type TitleLine = {
   height: number
   size: number
   tracking?: number
+  /** Corrección vertical del texto dentro de su franja (px), según el XD */
+  shift?: number
 }
 
 type Props = {
@@ -33,7 +35,7 @@ export default function TitleStack({ lines, weight = 800, as: Tag = 'h2', classN
             letterSpacing: line.tracking ? `${line.tracking}em` : undefined,
           }}
         >
-          {line.text}
+          {line.shift ? <span style={{ translate: `0 ${line.shift}px` }}>{line.text}</span> : line.text}
         </span>
       ))}
     </Tag>

@@ -52,7 +52,7 @@
 
 .hero__eyebrow {
   position: absolute;
-  top: 240px;
+  top: 248px;
   left: 10px;
   font: 400 18px/1 var(--sora);
   letter-spacing: 0.07em;
@@ -63,7 +63,7 @@
 .hero__eyebrow::after {
   content: '';
   position: absolute;
-  top: 48px;
+  top: 40px;
   left: 0;
   width: 60px;
   height: 1px;
@@ -86,13 +86,18 @@
   display: block;
   margin-top: 9px;
   font: 500 109px/1 var(--sora);
-  letter-spacing: -0.03em;
   text-transform: uppercase;
+}
+
+/* Interletrado letra por letra, como en el XD */
+.hero__title span span {
+  display: inline;
+  margin: 0;
 }
 
 .hero__subtitle {
   position: absolute;
-  top: 640px;
+  top: 626px;
   left: 0;
   font: 400 28px/35px var(--sora);
   letter-spacing: 0.024em;
@@ -104,7 +109,7 @@
 
 .hero__note {
   position: absolute;
-  top: 752px;
+  top: 755px;
   left: 0;
   width: 442px;
   font: 500 var(--fs-label)/24px var(--manrope);

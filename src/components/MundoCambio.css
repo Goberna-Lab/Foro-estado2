@@ -66,10 +66,12 @@
   border-radius: 10px;
 }
 
+/* Íconos centrados en una franja de 35px y etiquetas en la misma línea, como en el XD */
 .mundo__pillars li {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 35px auto;
+  justify-items: center;
   align-items: center;
   padding: 11px 4px 14px;
 }
@@ -89,10 +91,11 @@
 }
 
 .mundo__pillars span {
+  align-self: start;
   margin-top: 16px;
   white-space: pre-line;
   text-align: center;
-  font: 800 var(--fs-micro)/1.25 var(--manrope);
+  font: 800 var(--fs-micro)/1.08 var(--manrope);
   text-transform: uppercase;
   color: var(--navy-2);
 }

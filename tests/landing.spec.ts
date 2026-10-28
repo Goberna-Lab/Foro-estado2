@@ -105,8 +105,8 @@ test('la foto de "¿Qué es?" hace parallax sin dejar ver el fondo por arriba', 
   expect(despues.foto).toBeLessThanOrEqual(despues.seccion + 0.5)
 })
 
-test('los fondos con .px-bg se mueven sin dejar ver sus bordes', async ({ page }) => {
-  const fondos = page.locator('.px-bg')
+test('los fondos y fotos con parallax se mueven sin dejar ver sus bordes', async ({ page }) => {
+  const fondos = page.locator('.px-bg, .px-foto')
   expect(await fondos.count()).toBeGreaterThan(0)
 
   for (const fondo of await fondos.all()) {
@@ -142,7 +142,7 @@ test('con movimiento reducido los fondos quedan quietos', async ({ browser }) =>
   const page = await browser.newPage({ reducedMotion: 'reduce' })
   await abrir(page)
   await page.evaluate(() => window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'instant' }))
-  const transforms = await page.$$eval('.px-bg, .px-lento', (els) => els.map((el) => getComputedStyle(el).transform))
+  const transforms = await page.$$eval('.px-bg, .px-foto, .px-lento', (els) => els.map((el) => getComputedStyle(el).transform))
   expect(transforms.every((t) => t === 'none')).toBe(true)
   await page.close()
 })

@@ -1,6 +1,7 @@
 .whatsapp {
   position: fixed;
-  right: 200px;
+  /* En la esquina, fuera de la columna de contenido (que termina a 200px del borde) */
+  right: 40px;
   bottom: 40px;
   z-index: 40;
   width: 64px;

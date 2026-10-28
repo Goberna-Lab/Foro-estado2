@@ -17,9 +17,9 @@ export default function LicenciaPais() {
         <TitleStack
           className="pais__title"
           lines={[
-            { text: 'Un espacio que', tone: 'band', width: 520, height: 81, size: 60, tracking: -0.009 },
-            { text: 'trasciende fronteras para', tone: 'white', width: 818, height: 86, size: 60, tracking: -0.015 },
-            { text: 'PENSAR EL ESTADO', tone: 'orange', width: 642, height: 91, size: 60, tracking: -0.009 },
+            { text: 'Un espacio que', tone: 'band', width: 520, height: 81, size: 60, tracking: -0.009, shift: -3 },
+            { text: 'trasciende fronteras para', tone: 'white', width: 818, height: 86, size: 60, tracking: -0.015, shift: -5 },
+            { text: 'PENSAR EL ESTADO', tone: 'orange', width: 642, height: 91, size: 60, tracking: -0.009, shift: -3 },
           ]}
         />
         <a className="pais__cta" href="#trayectoria">

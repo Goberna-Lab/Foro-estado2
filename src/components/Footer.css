@@ -29,12 +29,13 @@
   color: var(--orange);
 }
 
+/* Cada enlace arranca donde está en el XD (865, 1032, 1216 y 1407) */
 .footer__nav {
   position: absolute;
   top: 241px;
-  right: 233px;
-  display: flex;
-  gap: 116px;
+  left: 665px;
+  display: grid;
+  grid-template-columns: 167px 184px 191px auto;
 }
 
 .footer__nav a {

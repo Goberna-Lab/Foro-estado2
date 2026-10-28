@@ -12,7 +12,7 @@ const PILARES = [
   { icon: globe, label: 'Visión\ncompartida', height: 34 },
   { icon: person, label: 'Fortalecer la\ncooperación', height: 34 },
   { icon: capitol, label: 'Promover\ncompromisos', height: 35 },
-  { icon: handshake, label: 'Networking\nejecutivo', height: 25 },
+  { icon: handshake, label: 'Networking\nejecutivo', height: 29 },
 ]
 
 export default function MundoCambio() {
@@ -54,7 +54,7 @@ export default function MundoCambio() {
         </div>
 
         <div className="mundo__photo">
-          <img src={equipo} alt="Equipo de Goberna en la Escuela de Inteligencia y Estrategia" />
+          <img className="px-foto" src={equipo} alt="Equipo de Goberna en la Escuela de Inteligencia y Estrategia" />
         </div>
       </div>
     </section>

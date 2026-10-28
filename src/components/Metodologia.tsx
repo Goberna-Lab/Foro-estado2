@@ -45,7 +45,7 @@ export default function Metodologia() {
           <TitleStack
             className="metodo__title"
             lines={[
-              { text: 'Un proceso en', tone: 'white', width: 540, height: 84, size: 60, tracking: -0.015 },
+              { text: 'Un proceso en', tone: 'white', width: 540, height: 84, size: 60, tracking: -0.015, shift: 3 },
               { text: '4 fases', tone: 'orange', width: 413, height: 89, size: 70, tracking: -0.009 },
             ]}
           />
@@ -66,7 +66,10 @@ export default function Metodologia() {
         onMouseLeave={() => setPausado(false)}
       >
         <div className="metodo__photo">
-          <img key={activa} src={fase.imagen} alt="" />
+          {/* Capa estable para el parallax: la foto se vuelve a montar en cada fase */}
+          <div className="metodo__capa px-foto">
+            <img key={activa} src={fase.imagen} alt="" />
+          </div>
         </div>
 
         <div className="metodo__detail" key={activa}>
