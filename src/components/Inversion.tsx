@@ -36,7 +36,7 @@ export default function Inversion() {
               <img src={calendar} alt="" width={32} height={34} />
               Tarifa vigente hasta
             </p>
-            <p className="inversion__date">32 DIC 2026</p>
+            <p className="inversion__date">31 DIC 2026</p>
             <p className="inversion__amount">USD 7,000</p>
           </div>
 
