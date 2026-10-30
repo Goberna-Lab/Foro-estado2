@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "playwright test --grep-invert @capturas",
-    "capturas": "playwright test --grep @capturas"
+    "capturas": "playwright test --grep @capturas",
+    "qa:mobile": "node scripts/qa-mobile.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

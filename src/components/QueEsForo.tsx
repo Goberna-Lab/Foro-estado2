@@ -1,18 +1,8 @@
 import escenario from '../assets/img/escenario.webp'
-import globe from '../assets/icons/icon-globe.svg'
-import person from '../assets/icons/icon-person.svg'
-import handshake from '../assets/icons/icon-handshake.svg'
 import quote from '../assets/icons/quote-open.svg'
+import { EJES, NO_ES } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import './QueEsForo.css'
-
-const NO_ES = ['No es un congreso', 'No es un seminario', 'No es un evento tradicional']
-
-const EJES = [
-  { icon: globe, titulo: 'Plataforma internacional', texto: 'Un espacio que trasciende fronteras para pensar el Estado.', x: 242 },
-  { icon: person, titulo: 'Factores de poder', texto: 'Reúne a líderes y actores estratégicos de cada país.', x: 760 },
-  { icon: handshake, titulo: 'Unidad estratégica', texto: 'Articula visiones diversas en torno a objetivos comunes.', x: 1267 },
-]
 
 export default function QueEsForo() {
   return (

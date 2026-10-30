@@ -1,21 +1,9 @@
 import { useState } from 'react'
 import redGlobal from '../assets/img/red-global.webp'
+import { PUNTOS } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import TitleStack from './TitleStack'
 import './Escalable.css'
-
-// El XD solo trae la descripción del punto 01; el resto queda pendiente.
-const PUNTOS = [
-  {
-    titulo: 'Presupuesto de defensa y ejecución del Fondo.',
-    destacado: 'Necesidad creciente',
-    descripcion: ' de espacios para el análisis estratégico del Estado.',
-  },
-  { titulo: 'Estado real de la recapitalización naval y aérea.', destacado: '', descripcion: '' },
-  { titulo: 'Marco legal del uso de la fuerza.', destacado: '', descripcion: '' },
-  { titulo: 'Sostenibilidad de la Caja de Pensiones Militar Policial.', destacado: '', descripcion: '' },
-  { titulo: 'Ciberdefensa.', destacado: '', descripcion: '' },
-]
 
 export default function Escalable() {
   const [abierto, setAbierto] = useState(0)

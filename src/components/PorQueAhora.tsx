@@ -1,11 +1,6 @@
 import stand from '../assets/img/stand-goberna.webp'
+import { DATOS } from '../data/contenido'
 import './PorQueAhora.css'
-
-const DATOS = [
-  { titulo: 'Fragmentación\npúblico - privada', cifra: '32', unidad: '%', detalle: 'Confianza en\ngobiernos', x: 828 },
-  { titulo: 'Riesgos\ncrecientes', cifra: '32', unidad: '%', detalle: 'Confianza en\npartidos', x: 1120 },
-  { titulo: 'Falta de espacios\nde decisión', cifra: '1 de cada 2', detalle: 'Homicidios\nvinculados al\ncrimen organizado', x: 1420 },
-]
 
 export default function PorQueAhora() {
   return (

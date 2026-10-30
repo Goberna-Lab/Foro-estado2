@@ -1,19 +1,9 @@
 import equipo from '../assets/img/equipo.webp'
 import mapa from '../assets/img/mapa-claro-vertical.webp'
-import globe from '../assets/icons/icon-globe.svg'
-import person from '../assets/icons/icon-person.svg'
-import capitol from '../assets/icons/icon-capitol.svg'
-import handshake from '../assets/icons/icon-handshake.svg'
+import { PILARES } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import TitleStack from './TitleStack'
 import './MundoCambio.css'
-
-const PILARES = [
-  { icon: globe, label: 'Visión\ncompartida', height: 34 },
-  { icon: person, label: 'Fortalecer la\ncooperación', height: 34 },
-  { icon: capitol, label: 'Promover\ncompromisos', height: 35 },
-  { icon: handshake, label: 'Networking\nejecutivo', height: 29 },
-]
 
 export default function MundoCambio() {
   return (

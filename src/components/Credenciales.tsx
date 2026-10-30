@@ -1,17 +1,7 @@
 import mapa from '../assets/img/mapa-claro-credenciales.webp'
-import events from '../assets/icons/cred-events.svg'
-import network from '../assets/icons/cred-network.svg'
-import community from '../assets/icons/cred-community.svg'
-import research from '../assets/icons/cred-research.svg'
+import { CREDENCIALES } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import './Credenciales.css'
-
-const CREDENCIALES = [
-  { icon: events, titulo: 'Eventos\nEspecializados', texto: 'Organización de espacios académicos y de análisis' },
-  { icon: network, titulo: 'Red Internacional\nde expertos', texto: 'Acceso a líderes, consultores y especialistas' },
-  { icon: community, titulo: 'Comunidad\nprofesional', texto: 'Vinculación con actores políticos, públicos y privados' },
-  { icon: research, titulo: 'Eventos\nEspecializados', texto: 'Desarrollo de contenidos, metodologías e investigaciones' },
-]
 
 export default function Credenciales() {
   return (

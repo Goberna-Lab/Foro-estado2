@@ -1,24 +1,8 @@
 import { useEffect, useState } from 'react'
-import diagnostico from '../assets/img/diagnostico.webp'
+import { FASE_MS, FASES } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import TitleStack from './TitleStack'
 import './Metodologia.css'
-
-// El XD solo trae el contenido completo de la fase 01; el resto queda pendiente.
-const FASES = [
-  {
-    titulo: 'Diagnóstico',
-    pregunta: '¿Qué problema o desafío se analiza antes del foro?',
-    descripcion:
-      'Definición de agenda estratégica basada en los principales desafíos del país/región.',
-    imagen: diagnostico,
-  },
-  { titulo: 'Convocatoria', pregunta: '', descripcion: '', imagen: diagnostico },
-  { titulo: 'Deliberación', pregunta: '', descripcion: '', imagen: diagnostico },
-  { titulo: 'Compromisos', pregunta: '', descripcion: '', imagen: diagnostico },
-]
-
-const AUTOPLAY_MS = 7000
 
 const numero = (i: number) => String(i + 1).padStart(2, '0')
 
@@ -28,7 +12,7 @@ export default function Metodologia() {
 
   useEffect(() => {
     if (pausado) return
-    const id = setTimeout(() => setActiva((i) => (i + 1) % FASES.length), AUTOPLAY_MS)
+    const id = setTimeout(() => setActiva((i) => (i + 1) % FASES.length), FASE_MS)
     return () => clearTimeout(id)
   }, [activa, pausado])
 
@@ -106,7 +90,7 @@ export default function Metodologia() {
                 {i === activa && (
                   <i
                     className="metodo__progress"
-                    style={{ animationDuration: `${AUTOPLAY_MS}ms`, animationPlayState: pausado ? 'paused' : 'running' }}
+                    style={{ animationDuration: `${FASE_MS}ms`, animationPlayState: pausado ? 'paused' : 'running' }}
                   />
                 )}
               </button>

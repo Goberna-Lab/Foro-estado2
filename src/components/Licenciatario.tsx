@@ -1,22 +1,8 @@
 import capitolio from '../assets/img/capitolio-fondo.webp'
-import institute from '../assets/icons/lic-institute.svg'
-import document from '../assets/icons/lic-document.svg'
-import shield from '../assets/icons/lic-shield.svg'
-import callcenter from '../assets/icons/lic-callcenter.svg'
-import business from '../assets/icons/lic-business.svg'
-import medal from '../assets/icons/lic-medal.svg'
+import { BENEFICIOS } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import TitleStack from './TitleStack'
 import './Licenciatario.css'
-
-const BENEFICIOS = [
-  { icon: institute, destacado: 'Derecho', texto: ' de representación\noficial en su país.' },
-  { icon: document, destacado: 'Manuales', texto: ' de operación,\ncomunicación e identidad.' },
-  { icon: shield, destacado: 'Uso autorizado', texto: ' de la marca\n', marca: true },
-  { icon: callcenter, destacado: 'Acompañamiento\nestratégico', texto: ' durante todo el\nproceso.' },
-  { icon: business, destacado: 'Metodología exclusiva', texto: ' para\ndesarrollar el evento.' },
-  { icon: medal, destacado: 'Uso autorizado', texto: ' de la marca\n', marca: true },
-]
 
 export default function Licenciatario() {
   return (

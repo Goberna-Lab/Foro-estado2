@@ -79,6 +79,14 @@ body {
   zoom: var(--zoom, 1);
 }
 
+/* Por debajo de 1024px se monta la app mobile (src/mobile), que es fluida */
+@media (max-width: 1023.98px) {
+  #root {
+    width: auto;
+    zoom: 1;
+  }
+}
+
 h1,
 h2,
 h3,
