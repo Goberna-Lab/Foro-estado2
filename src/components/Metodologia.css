@@ -54,13 +54,9 @@
   background: var(--navy);
 }
 
-.metodo__capa {
-  margin-top: -80px;
-}
-
 .metodo__photo img {
-  width: 771px;
-  height: 579px;
+  width: 760px;
+  height: 486px;
   animation: metodo-fade 0.6s ease both;
 }
 

@@ -15,6 +15,9 @@ import callcenter from '../assets/icons/lic-callcenter.svg'
 import business from '../assets/icons/lic-business.svg'
 import medal from '../assets/icons/lic-medal.svg'
 import diagnostico from '../assets/img/diagnostico.webp'
+import convocatoria from '../assets/img/convocatoria.webp'
+import deliberacion from '../assets/img/deliberacion.webp'
+import compromisos from '../assets/img/compromisos.webp'
 
 // El mundo cambió
 export const PILARES = [
@@ -40,7 +43,7 @@ export const EJES = [
   { icon: handshake, titulo: 'Unidad estratégica', texto: 'Articula visiones diversas en torno a objetivos comunes.', x: 1267 },
 ]
 
-// Metodología. Las cuatro fases usan por ahora la misma foto.
+// Metodología. Las fotos vienen recortadas con el encuadre del XD (760×486 a 1300px).
 export const FASES = [
   {
     titulo: 'Diagnóstico',
@@ -53,19 +56,19 @@ export const FASES = [
     titulo: 'Convocatoria',
     pregunta: '¿A quiénes reunimos y por qué?',
     descripcion: 'Una construcción de una red de actores estratégicos convocados.',
-    imagen: diagnostico,
+    imagen: convocatoria,
   },
   {
     titulo: 'Deliberación',
     pregunta: 'Análisis, discusión y generación de conocimiento.',
     descripcion: 'Desarrollo de ideas, conclusiones y propuestas.',
-    imagen: diagnostico,
+    imagen: deliberacion,
   },
   {
     titulo: 'Compromisos',
     pregunta: '¿Qué acciones salen después del encuentro?',
     descripcion: 'Compromisos definidos entre actores participantes',
-    imagen: diagnostico,
+    imagen: compromisos,
   },
 ]
 
