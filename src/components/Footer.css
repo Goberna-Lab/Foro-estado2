@@ -59,6 +59,17 @@
   height: 170px;
   border-radius: 10px;
   background: #fff;
-  font: 400 20px/34px var(--manrope);
-  color: var(--navy);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.footer__qr:hover {
+  transform: scale(1.04);
+}
+
+.footer__qr img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

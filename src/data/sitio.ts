@@ -1,6 +1,6 @@
 // Número de WhatsApp en formato internacional sin "+" (ej. 51987654321).
 // Mientras esté vacío, los botones abren WhatsApp sin un chat definido.
-export const WHATSAPP_NUMERO = ''
+export const WHATSAPP_NUMERO = '51983469091'
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}`
 

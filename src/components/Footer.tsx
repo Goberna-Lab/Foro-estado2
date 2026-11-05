@@ -1,5 +1,6 @@
 import capitolio from '../assets/img/capitolio-footer.webp'
-import { NAV_LINKS } from '../data/sitio'
+import qr from '../assets/img/qr-whatsapp.svg'
+import { NAV_LINKS, WHATSAPP_URL } from '../data/sitio'
 import './Footer.css'
 
 export default function Footer() {
@@ -19,8 +20,15 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-        {/* Espacio reservado para el código QR (pendiente en el diseño) */}
-        <div className="footer__qr">QR</div>
+        <a
+          className="footer__qr"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Escanea o haz clic para escribirnos por WhatsApp"
+        >
+          <img src={qr} alt="Código QR de WhatsApp" width={170} height={170} />
+        </a>
       </div>
     </footer>
   )
