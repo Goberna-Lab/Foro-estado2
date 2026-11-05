@@ -21,7 +21,7 @@ export default function Escalable() {
           lines={[
             { text: '¿Qué hace', tone: 'navy' },
             { text: 'escalable al', tone: 'white' },
-            { text: 'FORO DE ESTADO', tone: 'orange' },
+            { text: 'FORO DE ESTADO?', tone: 'orange' },
           ]}
         />
         <p className="m-text" data-reveal>

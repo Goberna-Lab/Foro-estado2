@@ -29,7 +29,7 @@ export const PILARES = [
 
 // ¿Por qué ahora?
 export const DATOS = [
-  { titulo: 'Fragmentación\npúblico - privada', cifra: '32', unidad: '%', detalle: 'Confianza en\ngobiernos', x: 828 },
+  { titulo: 'Fragmentación\npúblico-privada', cifra: '32', unidad: '%', detalle: 'Confianza en\ngobiernos', x: 828 },
   { titulo: 'Riesgos\ncrecientes', cifra: '32', unidad: '%', detalle: 'Confianza en\npartidos', x: 1120 },
   { titulo: 'Falta de espacios\nde decisión', cifra: '1 de cada 2', detalle: 'Homicidios\nvinculados al\ncrimen organizado', x: 1420 },
 ]
@@ -55,7 +55,7 @@ export const FASES = [
   {
     titulo: 'Convocatoria',
     pregunta: '¿A quiénes reunimos y por qué?',
-    descripcion: 'Una construcción de una red de actores estratégicos convocados.',
+    descripcion: 'Construcción de una red de actores estratégicos convocados.',
     imagen: convocatoria,
   },
   {
@@ -67,7 +67,7 @@ export const FASES = [
   {
     titulo: 'Compromisos',
     pregunta: '¿Qué acciones salen después del encuentro?',
-    descripcion: 'Compromisos definidos entre actores participantes',
+    descripcion: 'Compromisos definidos entre actores participantes.',
     imagen: compromisos,
   },
 ]
@@ -75,25 +75,41 @@ export const FASES = [
 /** Tiempo que el slider de fases se queda en cada una */
 export const FASE_MS = 7000
 
-// ¿Qué hace escalable al Foro? El XD solo trae la descripción del punto 01.
+// ¿Qué hace escalable al Foro?
 export const PUNTOS = [
   {
-    titulo: 'Presupuesto de defensa y ejecución del Fondo.',
+    titulo: 'Demanda internacional',
     destacado: 'Necesidad creciente',
     descripcion: ' de espacios para el análisis estratégico del Estado.',
   },
-  { titulo: 'Estado real de la recapitalización naval y aérea.', destacado: '', descripcion: '' },
-  { titulo: 'Marco legal del uso de la fuerza.', destacado: '', descripcion: '' },
-  { titulo: 'Sostenibilidad de la Caja de Pensiones Militar Policial.', destacado: '', descripcion: '' },
-  { titulo: 'Ciberdefensa.', destacado: '', descripcion: '' },
+  {
+    titulo: 'Modelo replicable',
+    destacado: 'Marca, metodología',
+    descripcion: ' y estándares adaptables a distintos países.',
+  },
+  {
+    titulo: 'Red estratégica',
+    destacado: 'Red internacional',
+    descripcion: ' de altos funcionarios, líderes políticos y expertos de Goberna.',
+  },
+  {
+    titulo: 'Licenciamiento',
+    destacado: 'Expansión mediante',
+    descripcion: ' aliados estratégicos con respaldo internacional.',
+  },
+  {
+    titulo: 'Ecosistema de valor',
+    destacado: 'Eventos, formación,',
+    descripcion: ' conocimiento y comunidad como plataforma de crecimiento.',
+  },
 ]
 
 // Tracción y credenciales
 export const CREDENCIALES = [
-  { icon: events, titulo: 'Eventos\nEspecializados', texto: 'Organización de espacios académicos y de análisis' },
-  { icon: network, titulo: 'Red Internacional\nde expertos', texto: 'Acceso a líderes, consultores y especialistas' },
+  { icon: events, titulo: 'Eventos\nespecializados', texto: 'Organización de espacios académicos y de análisis' },
+  { icon: network, titulo: 'Red internacional\nde expertos', texto: 'Acceso a líderes, consultores y especialistas' },
   { icon: community, titulo: 'Comunidad\nprofesional', texto: 'Vinculación con actores políticos, públicos y privados' },
-  { icon: research, titulo: 'Eventos\nEspecializados', texto: 'Desarrollo de contenidos, metodologías e investigaciones' },
+  { icon: research, titulo: 'Eventos\nespecializados', texto: 'Desarrollo de contenidos, metodologías e investigaciones' },
 ]
 
 // ¿Qué obtiene el licenciatario?

@@ -21,8 +21,8 @@ export default function MundoCambio() {
             className="mundo__title"
             lines={[
               { text: 'La forma de', tone: 'navy', width: 494, height: 68, size: 44, tracking: -0.009 },
-              { text: 'Comprender el estado', tone: 'white', width: 535, height: 72, size: 43, tracking: -0.015 },
-              { text: 'También debe hacerlo', tone: 'orange', width: 587, height: 76, size: 47, tracking: -0.009 },
+              { text: 'comprender el Estado', tone: 'white', width: 535, height: 72, size: 43, tracking: -0.015 },
+              { text: 'también debe hacerlo', tone: 'orange', width: 587, height: 76, size: 47, tracking: -0.009 },
             ]}
           />
 

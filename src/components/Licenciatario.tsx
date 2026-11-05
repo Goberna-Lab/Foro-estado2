@@ -20,7 +20,7 @@ export default function Licenciatario() {
           weight={700}
           lines={[
             { text: '¿Qué obtiene', tone: 'white', width: 513, height: 84, size: 60, tracking: -0.015, shift: 3 },
-            { text: 'El licenciatario?', tone: 'orange', width: 617, height: 89, size: 70, tracking: -0.009 },
+            { text: 'el licenciatario?', tone: 'orange', width: 617, height: 89, size: 70, tracking: -0.009 },
           ]}
         />
 
