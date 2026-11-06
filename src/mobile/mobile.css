@@ -1003,17 +1003,18 @@
 }
 
 /* Carrusel con scroll nativo y snap; alineado con la columna de texto */
+/* Cada fase queda centrada; de las vecinas solo asoma un filo */
 .m-metodo__track {
+  --card: 86%;
   position: relative;
   display: grid;
-  grid-auto-columns: 84%;
+  grid-auto-columns: 100%; /* = --card del ancho total, por el padding */
   grid-auto-flow: column;
-  gap: 16px;
+  gap: 12px;
   margin-top: 16px;
-  padding: 8px var(--pad);
+  padding: 8px calc((100% - var(--card)) / 2);
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scroll-padding-inline: var(--pad);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
@@ -1023,7 +1024,7 @@
 }
 
 .m-metodo__card {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   color: var(--navy-2);
 }
 
@@ -1837,7 +1838,7 @@
   }
 
   .m-metodo__track {
-    grid-auto-columns: 62%;
+    --card: 62%;
   }
 
   .m-cred__grid,

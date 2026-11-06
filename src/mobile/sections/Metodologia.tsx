@@ -35,7 +35,8 @@ export default function Metodologia() {
   const irA = (i: number) => {
     const el = pista.current!
     const destino = el.children[(i + FASES.length) % FASES.length] as HTMLElement
-    const margen = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0
+    // Centrada en la pista, igual que el scroll-snap
+    const margen = (el.clientWidth - destino.offsetWidth) / 2
     el.scrollTo({ left: destino.offsetLeft - margen, behavior: 'smooth' })
   }
 
