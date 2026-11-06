@@ -29,9 +29,9 @@ export const PILARES = [
 
 // ¿Por qué ahora?
 export const DATOS = [
-  { titulo: 'Fragmentación\npúblico-privada', cifra: '32', unidad: '%', detalle: 'Confianza en\ngobiernos', x: 828 },
-  { titulo: 'Riesgos\ncrecientes', cifra: '32', unidad: '%', detalle: 'Confianza en\npartidos', x: 1120 },
-  { titulo: 'Falta de espacios\nde decisión', cifra: '1 de cada 2', detalle: 'Homicidios\nvinculados al\ncrimen organizado', x: 1420 },
+  { titulo: 'Fragmentación\npúblico-privada', cifra: '32', unidad: '%', detalle: 'Confianza en\ngobiernos', x: 911 },
+  { titulo: 'Riesgos\ncrecientes', cifra: '32', unidad: '%', detalle: 'Confianza en\npartidos', x: 1162 },
+  { titulo: 'Falta de espacios\nde decisión', cifra: '1 de cada 2', detalle: 'Homicidios vinculados\nal crimen organizado', x: 1418 },
 ]
 
 // ¿Qué es el Foro de Estado?

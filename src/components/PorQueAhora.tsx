@@ -1,4 +1,4 @@
-import stand from '../assets/img/stand-goberna.webp'
+import foto from '../assets/img/por-que-ahora.webp'
 import { DATOS } from '../data/contenido'
 import './PorQueAhora.css'
 
@@ -6,7 +6,7 @@ export default function PorQueAhora() {
   return (
     <section className="ahora">
       <div className="ahora__photo">
-        <img className="px-foto" src={stand} alt="Stand de Goberna con el mapa de América Latina" />
+        <img className="px-foto" src={foto} alt="Panel de expertos en un foro de Goberna" />
       </div>
 
       <div className="container">

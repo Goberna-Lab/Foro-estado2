@@ -1,4 +1,4 @@
-import stand from '../../assets/img/stand-goberna.webp'
+import foto from '../../assets/img/por-que-ahora.webp'
 import { DATOS } from '../../data/contenido'
 import { sinSaltos } from '../text'
 
@@ -6,7 +6,7 @@ export default function PorQueAhora() {
   return (
     <section className="m-ahora">
       <div className="m-ahora__photo" data-unveil>
-        <img src={stand} alt="Stand de Goberna con el mapa de América Latina" loading="lazy" data-parallax="60" />
+        <img src={foto} alt="Panel de expertos en un foro de Goberna" loading="lazy" data-parallax="60" />
       </div>
 
       <div className="m-section m-ahora__body">

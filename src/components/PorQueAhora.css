@@ -6,22 +6,22 @@
 
 .ahora__photo {
   position: absolute;
-  top: 0;
+  top: 141px;
   left: 0;
-  width: 808px;
-  height: 890px;
+  width: 907px;
+  height: 584px;
   overflow: hidden;
 }
 
 .ahora__photo img {
-  width: 974px;
-  height: 1097px;
+  width: 907px;
+  height: 584px;
 }
 
 .ahora__eyebrow {
   position: absolute;
-  top: 91px;
-  left: 732px;
+  top: 122px;
+  left: 821px;
   font: 500 calc(var(--fs-eyebrow) * 1.25)/39px var(--manrope);
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -32,18 +32,18 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: calc(100% + 74px);
-  width: 50px;
+  right: calc(100% + 2px);
+  width: 49px;
   height: 1px;
   background: var(--orange);
 }
 
 .ahora__title {
   position: absolute;
-  top: 191px;
-  left: 736px;
-  width: 802px;
-  font: 700 40px/48px var(--sora);
+  top: 192px;
+  left: 819px;
+  width: 744px;
+  font: 700 39px/50px var(--sora);
   color: var(--navy);
 }
 
@@ -61,9 +61,9 @@
 .ahora__stats::before {
   content: '';
   position: absolute;
-  top: 394px;
-  left: 586px;
-  width: 934px;
+  top: 413px;
+  left: 821px;
+  width: 699px;
   height: 1px;
   background: var(--gray);
 }

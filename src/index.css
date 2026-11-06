@@ -113,6 +113,11 @@ button {
   cursor: pointer;
 }
 
+/* Tramo en mayúsculas dentro de un párrafo (como en el XD) */
+.caps {
+  text-transform: uppercase;
+}
+
 .container {
   position: relative;
   width: 1520px;

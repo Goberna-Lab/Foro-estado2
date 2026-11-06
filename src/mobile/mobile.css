@@ -709,7 +709,7 @@
 .m-ahora__photo {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 907 / 584;
   max-height: 680px;
   width: 100%;
   background: var(--navy);
@@ -722,7 +722,7 @@
   width: 100%;
   height: calc(100% + 120px);
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: 50% 50%;
 }
 
 .m-ahora__accent {

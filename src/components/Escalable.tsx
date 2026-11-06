@@ -26,7 +26,7 @@ export default function Escalable() {
         />
         <p className="escalable__text">
           <strong>FORO DE ESTADO</strong> ha sido concebido como un modelo de expansión
-          internacional, combinando una metodología replicable, una red de alto nivel integrada por
+          internacional, combinando una <strong className="caps">metodología replicable,</strong> una red de alto nivel integrada por
           altos funcionarios de inteligencia y altos funcionarios políticos de Goberna, y un
           ecosistema de valor que facilita su implementación en distintos países.
         </p>
