@@ -6,7 +6,7 @@ import TitleStack from './TitleStack'
 import './Escalable.css'
 
 export default function Escalable() {
-  const [abierto, setAbierto] = useState(0)
+  const [activo, setActivo] = useState(0)
 
   return (
     <section className="escalable">
@@ -31,33 +31,30 @@ export default function Escalable() {
           ecosistema de valor que facilita su implementación en distintos países.
         </p>
 
+        {/* Se abre al pasar el mouse (no es clickeable); queda abierto el último punto señalado */}
         <ul className="escalable__list">
-          {PUNTOS.map((punto, i) => {
-            const abiertoAhora = abierto === i
-            return (
-              <li key={punto.titulo} className={abiertoAhora ? 'is-open' : ''}>
-                <button
-                  type="button"
-                  aria-expanded={abiertoAhora}
-                  onClick={() => setAbierto(abiertoAhora ? -1 : i)}
-                >
-                  <span className="escalable__num">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="escalable__body">
-                    <span className="escalable__item-title">{punto.titulo}</span>
-                    {abiertoAhora && punto.descripcion && (
+          {PUNTOS.map((punto, i) => (
+            <li
+              key={punto.titulo}
+              className={activo === i ? 'is-open' : ''}
+              onMouseEnter={() => setActivo(i)}
+            >
+              <div className="escalable__item">
+                <span className="escalable__num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="escalable__body">
+                  <span className="escalable__item-title">{punto.titulo}</span>
+                  {punto.descripcion && (
+                    <span className="escalable__reveal">
                       <span className="escalable__item-text">
                         <strong>{punto.destacado}</strong>
                         {punto.descripcion}
                       </span>
-                    )}
-                  </span>
-                  <span className="escalable__plus" aria-hidden="true">
-                    +
-                  </span>
-                </button>
-              </li>
-            )
-          })}
+                    </span>
+                  )}
+                </span>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

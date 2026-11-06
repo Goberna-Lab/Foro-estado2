@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font: 500 13px/1.4 var(--manrope);
+  font: 500 16.25px/1.4 var(--manrope);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--orange);
@@ -1155,25 +1155,25 @@
   margin-top: 12px;
 }
 
-.m-escalable__list button {
+.m-escalable__item {
   display: flex;
   align-items: center;
   width: 100%;
   min-height: 72px;
   padding: 14px 16px 14px 0;
-  text-align: left;
   color: var(--light);
   background: rgba(2, 16, 42, 0.85);
   border: 2px solid #1c3963;
   border-radius: 10px;
   backdrop-filter: blur(6px);
   transition:
-    background 0.25s,
-    border-color 0.25s,
-    border-radius 0.25s;
+    color 0.35s,
+    background 0.35s,
+    border-color 0.35s,
+    border-radius 0.35s;
 }
 
-.m-escalable__list .is-open button {
+.m-escalable__list .is-open .m-escalable__item {
   color: var(--navy-2);
   background: var(--light);
   border-color: var(--light);
@@ -1185,6 +1185,9 @@
   padding-left: 16px;
   font: 500 22px/1 var(--montserrat);
   letter-spacing: -0.03em;
+  transition:
+    color 0.35s,
+    font-size 0.35s var(--m-ease);
 }
 
 .is-open .m-escalable__num {
@@ -1197,7 +1200,6 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 6px;
   padding: 2px 12px 2px 16px;
   border-left: 1px solid #1c3f6c;
 }
@@ -1206,27 +1208,44 @@
   font: 700 16px/1.4 var(--sora);
 }
 
+/* La descripción se despliega con la altura animada (0fr → 1fr) */
+.m-escalable__reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s var(--m-ease),
+    opacity 0.3s;
+}
+
+.is-open .m-escalable__reveal {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition-delay: 0s, 0.12s;
+}
+
 .m-escalable__item-text {
+  overflow: hidden;
   font: 400 15px/1.6 var(--manrope);
-  animation: m-fade 0.4s ease both;
+}
+
+/* Separación con el título, dentro del recorte para que no ocupe espacio cerrado */
+.m-escalable__item-text::before {
+  content: '';
+  display: block;
+  height: 6px;
 }
 
 .m-escalable__item-text strong {
   font-weight: 700;
 }
 
-.m-escalable__plus {
-  flex: 0 0 22px;
-  height: 22px;
-  color: #adb1b4;
-  transition:
-    rotate 0.3s var(--m-ease),
-    color 0.3s;
-}
-
-.is-open .m-escalable__plus {
-  rotate: 45deg;
-  color: var(--orange);
+@media (prefers-reduced-motion: reduce) {
+  .m-escalable__item,
+  .m-escalable__num,
+  .m-escalable__reveal {
+    transition: none;
+  }
 }
 
 /* ---------- Tracción y credenciales ---------- */

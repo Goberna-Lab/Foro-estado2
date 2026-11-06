@@ -69,13 +69,15 @@ test('el slider de fases cambia con las flechas y las pestañas', async ({ page 
   await expect(fase).toHaveText('Deliberación')
 })
 
-test('el acordeón abre un punto a la vez', async ({ page }) => {
-  const items = page.locator('.escalable__list button')
-  await expect(items.nth(0)).toHaveAttribute('aria-expanded', 'true')
+test('los puntos de "escalable" se abren al pasar el mouse, sin clic ni "+"', async ({ page }) => {
+  const items = page.locator('.escalable__list li')
+  await expect(items.nth(0)).toHaveClass(/is-open/)
+  await expect(page.locator('.escalable__list button')).toHaveCount(0)
+  await expect(page.locator('.escalable__list')).not.toContainText('+')
 
-  await items.nth(2).click()
-  await expect(items.nth(2)).toHaveAttribute('aria-expanded', 'true')
-  await expect(items.nth(0)).toHaveAttribute('aria-expanded', 'false')
+  await items.nth(2).hover()
+  await expect(items.nth(2)).toHaveClass(/is-open/)
+  await expect(items.nth(0)).not.toHaveClass(/is-open/)
 })
 
 test('la foto de "¿Qué es?" hace parallax sin dejar ver el fondo por arriba', async ({ page }) => {

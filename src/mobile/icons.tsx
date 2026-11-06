@@ -34,9 +34,3 @@ export const IconArrowLeft = (p: Props) => (
     <path d="M19 12H5m6-6-6 6 6 6" />
   </svg>
 )
-
-export const IconPlus = (p: Props) => (
-  <svg {...base} {...p}>
-    <path d="M12 5v14M5 12h14" />
-  </svg>
-)

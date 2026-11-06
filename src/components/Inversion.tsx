@@ -31,7 +31,7 @@ export default function Inversion() {
             { text: 'Internacional', tone: 'ink', width: 508, height: 89, size: 70, tracking: -0.009, shift: -6 },
           ]}
         />
-        <p className="inversion__term">Vigencia: 1 año</p>
+        <p className="inversion__term">Vigencia: 6 meses</p>
 
         <div className="inversion__panel">
           <div className="inversion__price">
@@ -40,7 +40,7 @@ export default function Inversion() {
               Tarifa vigente hasta
             </p>
             <p className="inversion__date">31 DIC 2026</p>
-            <p className="inversion__amount">USD 7,000</p>
+            <p className="inversion__amount">USD 10,000</p>
           </div>
 
           <div className="inversion__row inversion__row--card">

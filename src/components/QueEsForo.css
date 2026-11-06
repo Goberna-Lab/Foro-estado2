@@ -185,7 +185,7 @@
 
 .que-es__quote-label {
   margin-bottom: 15px;
-  font-size: var(--fs-label);
+  font-size: calc(var(--fs-label) * 1.25);
   line-height: 32px;
   letter-spacing: 0.1em;
   text-transform: uppercase;

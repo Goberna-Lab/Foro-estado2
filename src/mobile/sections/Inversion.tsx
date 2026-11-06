@@ -22,7 +22,7 @@ export default function Inversion() {
             ]}
           />
           <p className="m-inv__term" data-reveal>
-            Vigencia: 1 año
+            Vigencia: 6 meses
           </p>
         </div>
         <div className="m-inv__photo">
@@ -47,7 +47,7 @@ export default function Inversion() {
             </p>
             <p className="m-inv__date">31 DIC 2026</p>
             <span className="m-inv__rule" data-line aria-hidden="true" />
-            <p className="m-inv__amount">USD 7,000</p>
+            <p className="m-inv__amount">USD 10,000</p>
           </div>
 
           <div className="m-inv__row m-inv__row--card" data-reveal>
