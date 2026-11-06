@@ -1,6 +1,6 @@
-import equipo from '../assets/img/equipo.webp'
+import poster from '../assets/img/spot-poster.webp'
 import mapa from '../assets/img/mapa-claro-vertical.webp'
-import { PILARES } from '../data/contenido'
+import { PILARES, SPOT_URL } from '../data/contenido'
 import Eyebrow from './Eyebrow'
 import TitleStack from './TitleStack'
 import './MundoCambio.css'
@@ -44,7 +44,7 @@ export default function MundoCambio() {
         </div>
 
         <div className="mundo__photo">
-          <img className="px-foto" src={equipo} alt="Equipo de Goberna en la Escuela de Inteligencia y Estrategia" />
+          <video src={SPOT_URL} poster={poster} autoPlay muted loop playsInline controls preload="metadata" />
         </div>
       </div>
     </section>

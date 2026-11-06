@@ -102,16 +102,19 @@
 
 .mundo__photo {
   position: absolute;
-  top: 177px;
+  /* Spot 16:9 centrado en el hueco que ocupaba la foto (177–699px) */
+  top: 218px;
   left: 736px;
   width: 784px;
-  height: 522px;
+  height: 441px;
   overflow: hidden;
   border-radius: 20px;
+  background: var(--navy);
 }
 
-.mundo__photo img {
-  width: 1107px;
-  height: 739px;
-  margin: -92px 0 0 -239px;
+.mundo__photo video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

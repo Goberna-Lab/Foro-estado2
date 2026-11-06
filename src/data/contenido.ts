@@ -19,7 +19,9 @@ import convocatoria from '../assets/img/convocatoria.webp'
 import deliberacion from '../assets/img/deliberacion.webp'
 import compromisos from '../assets/img/compromisos.webp'
 
-// El mundo cambió
+// El mundo cambió: spot de Goberna (archivo que reproduce el embed de cms.goberna.club)
+export const SPOT_URL = 'https://videos.goberna.club/videoplayback-2.mp4'
+
 export const PILARES = [
   { icon: globe, label: 'Visión\ncompartida', height: 34 },
   { icon: person, label: 'Fortalecer la\ncooperación', height: 34 },

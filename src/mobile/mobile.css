@@ -641,19 +641,14 @@
 
 .m-mundo__photo {
   margin-top: 36px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
 }
 
-/* Encuadre en las 4 personas del centro (x 232–868 de la foto de 1107px),
-   sin las de los extremos que salen cortadas. Los % de margin-top son del
-   ancho del marco; queda holgura de sobra para el parallax */
-.m-mundo__photo img {
-  top: 0;
-  left: -36.5%;
-  width: 174.1%;
-  max-width: none;
-  height: auto;
-  margin-top: -15.5%;
+.m-mundo__photo video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .m-mundo__subtitle {

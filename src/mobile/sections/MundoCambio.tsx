@@ -1,5 +1,5 @@
-import equipo from '../../assets/img/equipo.webp'
-import { PILARES } from '../../data/contenido'
+import poster from '../../assets/img/spot-poster.webp'
+import { PILARES, SPOT_URL } from '../../data/contenido'
 import MTitle from '../MTitle'
 
 export default function MundoCambio() {
@@ -23,12 +23,7 @@ export default function MundoCambio() {
         </p>
 
         <div className="m-photo m-mundo__photo" data-unveil>
-          <img
-            src={equipo}
-            alt="Equipo de Goberna en la Escuela de Inteligencia y Estrategia"
-            loading="lazy"
-            data-parallax="36"
-          />
+          <video src={SPOT_URL} poster={poster} autoPlay muted loop playsInline controls preload="metadata" />
         </div>
 
         <h3 className="m-h3 m-mundo__subtitle" data-reveal>
