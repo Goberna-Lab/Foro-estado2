@@ -710,12 +710,13 @@
   background: var(--navy);
 }
 
+/* Foto horizontal: deriva corta para no recortar los lados de la escena */
 .m-ahora__photo img {
   position: absolute;
-  top: -60px;
+  top: -24px;
   left: 0;
   width: 100%;
-  height: calc(100% + 120px);
+  height: calc(100% + 48px);
   object-fit: cover;
   object-position: 50% 50%;
 }

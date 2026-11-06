@@ -6,7 +6,7 @@ export default function PorQueAhora() {
   return (
     <section className="m-ahora">
       <div className="m-ahora__photo" data-unveil>
-        <img src={foto} alt="Panel de expertos en un foro de Goberna" loading="lazy" data-parallax="60" />
+        <img src={foto} alt="Panel de expertos en un foro de Goberna" loading="lazy" data-parallax="24" />
       </div>
 
       <div className="m-section m-ahora__body">
